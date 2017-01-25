@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "default_locale": "en",
+  "name": "__MSG_extensionName__",
+  "version": "1.0",
+  "description": "__MSG_extensionName__",
+  "icons": {
+    "48": "icons/bc-48.png",
+    "96": "icons/bc-96.png"
+  },
+
+  "background": {
+    "scripts": ["js/blastcaster.js"]
+  },
+
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": {
+      "32": "icons/bc-32.png",
+      "38": "icons/bc-64.png",
+      "64": "icons/bc-128.png"
+    },
+    "default_title": "__MSG_notificationTitle__"
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+
+  "options_ui": {
+    "page": "html/options.html",
+    "chrome_style": true
+  }
+}

@@ -1,0 +1,16 @@
+body {
+  background-color: #fcfcfc;
+  font-family: Helvetica, Arial, sans-serif;
+}
+#status {
+    min-height: 1em;
+    margin: 2px;
+    font-size: 0.8em;
+    color: inherit;
+}
+#status.ok {
+  color: green;
+}
+#status.error {
+  color: red;
+}

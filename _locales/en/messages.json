@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "BlastCaster Browser Extension",
+    "description": "Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "Keep all your content marketing streams relevant by quickly and easily creating engaging posts for content you've curated",
+    "description": "Description of the extension."
+  },
+  "notificationTitle": {
+    "message": "Blast It",
+    "description": "Title of the click notification."
+  }
+}

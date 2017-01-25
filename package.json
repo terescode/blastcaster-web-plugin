@@ -1,0 +1,19 @@
+{
+  "name": "blastcaster-browser-plugin",
+  "version": "1.0.0",
+  "description": "Keep all your content marketing streams relevant by quickly and easily creating engaging posts for content you've curated",
+  "main": "",
+  "scripts": {
+    "web-ext": "./node_modules/web-ext/bin/web-ext",
+    "run": "npm run web-ext -- run &",
+    "lint": "npm run web-ext -- lint",
+    "build": "npm run web-ext -- build",
+    "sign": "npm run web-ext -- sign",
+    "build-dist": "npm run lint && npm run build"
+  },
+  "author": "",
+  "dependencies": {},
+  "devDependencies": {
+    "web-ext": "^1.7.0"
+  }
+}
