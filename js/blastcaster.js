@@ -7,9 +7,7 @@
  (function () {
   'use strict';
 
-  var wpPrefix = '',
-    wpSuffix = '/wp-admin/edit.php?page=bc_add_blast',
-    popupURL = chrome.extension.getURL('html/popup.html'),
+  var popupURL = chrome.extension.getURL('html/popup.html'),
     activeTabId,
     popup,
     popupChannel;
@@ -36,18 +34,13 @@
   function handleMessage(message, sender, sendResponse) {
     if (message && message.type) {
       if (message.type === 'inspectPage') {
-        if (wpPrefix) {
-          popupChannel = sendResponse;
-          chrome.tabs.executeScript(activeTabId, {
-            file: '/js/pageInspector.js'
-          });
-          return true;
-        } else {
-          sendResponse(message);
-        }
+        popupChannel = sendResponse;
+        chrome.tabs.executeScript(activeTabId, {
+          file: '/js/pageInspector.js'
+        });
+        return true;
       } else if (message.type === 'pageInspected') {
         if (popupChannel) {
-          message.wpUrl = wpPrefix + wpSuffix;
           popupChannel(message);
           popupChannel = null;
         }

@@ -1,0 +1,21 @@
+.wrapper {
+	padding: 4px;
+	font-family: Roboto, sans-serif;
+}
+.wrapper p {
+	font-size: 1.2em;
+	margin: 0px;
+}
+.wrapper input[type="text"],
+.wrapper textarea {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.submit {
+	margin: 12px 0px !important;
+}
+:global(#blastcaster-root){
+	width: 100%;
+	max-width: 1024px;
+}

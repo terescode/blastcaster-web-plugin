@@ -369,6 +369,7 @@ var ExtensionPreprocessingJS = {};
           name = tag.getAttribute('property').toLowerCase();
         }
 
+        content = '';
         if (tag.content) {
           content = tag.content;
         } else if (tag.hasAttribute('value')) {
@@ -526,7 +527,7 @@ var ExtensionPreprocessingJS = {};
       }
       itemProps = article[0].querySelectorAll('img');
       if (itemProps) {
-        for (i = 0; i < 2; i += 1) {
+        for (i = 0; i < Math.min(2, itemProps.length); i += 1) {
           addUniqueUrl(pd.images, itemProps[i].src, true);
         }
       }
@@ -619,12 +620,21 @@ var ExtensionPreprocessingJS = {};
 }(ExtensionPreprocessingJS));
 
 if (typeof chrome !== 'undefined') {
-  ExtensionPreprocessingJS.run({
-    completionFunction: function (obj) {
-      chrome.runtime.sendMessage({
-        type: 'pageInspected',
-        result: obj
-      });
-    }
-  });
+  try {
+    ExtensionPreprocessingJS.run({
+      completionFunction: function (obj) {
+        chrome.runtime.sendMessage({
+          type: 'pageInspected',
+          success: true,
+          result: obj
+        });
+      }
+    });
+  } catch (err) {
+    chrome.runtime.sendMessage({
+      type: 'pageInspected',
+      success: false,
+      result: err
+    });
+  }
 }

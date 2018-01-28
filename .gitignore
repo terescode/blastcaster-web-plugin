@@ -8,6 +8,8 @@ node_modules/*
 build/*
 reports/*
 web-ext-artifacts/*
+js/bundle.*
+css/bundle.*
 
 # Logs
 *.log
